@@ -1,0 +1,11 @@
+/*
+   RESET.CSS
+   Zera os estilos padrão do navegador. Isso iguala tudo pra começar do zero.
+*/
+
+/* O asterisco (*) seleciona TODOS os elementos da página */
+* {
+    margin: 0;      /* tira margem externa padrão */
+    padding: 0;     /* tira espaçamento interno padrão */
+    box-sizing: border-box; /* faz o padding não aumentar o tamanho do elemento */
+}
