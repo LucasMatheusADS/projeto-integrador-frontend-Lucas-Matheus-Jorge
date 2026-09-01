@@ -1,0 +1,197 @@
+/*
+   STYLE.CSS
+   Estilos visuais da página.
+*/
+
+
+/* body: o corpo inteiro da página */
+body {
+    font-family: Arial, sans-serif;   /* fonte do texto */
+    background-color: #f5f5f5;        /* fundo cinza claro */
+    color: #333;                      /* cor do texto (cinza escuro) */
+    padding: 20px;                    /* espaçamento nas bordas da página */
+}
+
+/* --- CABEÇALHO (header) --- */
+
+header {
+    text-align: center;    /* centraliza tudo dentro do header */
+    margin-bottom: 30px;   /* espaço de 30px embaixo do header */
+}
+
+/* h1: título principal "Aluguel de Carros Esportivos" */
+h1 {
+    font-size: 32px;       /* tamanho da fonte */
+    margin-bottom: 20px;   /* espaço embaixo do título */
+}
+
+/* .banner: a imagem grande no topo da página */
+/* o ponto (.) significa que é uma classe */
+.banner {
+    width: 100%;           /* imagem ocupa toda a largura disponível */
+    max-width: 800px;      /* mas no máximo 800px (não fica gigante) */
+    border-radius: 8px;    /* cantos arredondados */
+}
+
+/* --- CONTEÚDO PRINCIPAL (main) --- */
+
+main {
+    max-width: 800px;      /* conteúdo no máximo 800px de largura */
+    margin: 0 auto;        /* "0 auto" centraliza na página */
+}
+
+/* --- SEÇÕES (section) --- */
+
+/* Cada section vira um "card" branco com sombra */
+section {
+    background-color: white;              /* fundo branco */
+    padding: 20px;                        /* espaçamento interno */
+    margin-bottom: 30px;                  /* espaço entre as seções */
+    border-radius: 8px;                   /* cantos arredondados */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sombra leve */
+}
+
+/* h2: título de cada seção ("Catálogo de Carros", "Solicitar Aluguel") */
+h2 {
+    font-size: 24px;           /* tamanho da fonte */
+    margin-bottom: 20px;       /* espaço embaixo */
+    border-bottom: 2px solid #0066cc; /* linha azul embaixo do título */
+    padding-bottom: 8px;       /* espaço entre o título e a linha azul */
+}
+
+/* --- CADA CARRO NO CATÁLOGO (.carro) --- */
+
+.carro {
+    margin-bottom: 20px;        /* espaço entre um carro e outro */
+    padding-bottom: 20px;       /* espaço interno embaixo */
+    border-bottom: 1px solid #eee; /* linha divisória leve entre os carros */
+}
+
+/* :last-child seleciona o ÚLTIMO elemento .carro (tira a linha divisória dele) */
+.carro:last-child {
+    border-bottom: none;
+}
+
+/* h3: nome de cada carro ("Porsche 911", "Audi R8", etc) */
+h3 {
+    font-size: 20px;       /* tamanho da fonte */
+    color: #0066cc;        /* cor azul */
+    margin-bottom: 10px;   /* espaço embaixo */
+}
+
+/* Imagem dentro de cada carro */
+.carro img {
+    width: 100%;           /* imagem ocupa toda a largura do card */
+    border-radius: 8px;    /* cantos arredondados */
+    margin-bottom: 10px;   /* espaço embaixo da imagem */
+}
+
+/* Parágrafos de texto descritivo */
+p {
+    line-height: 1.6;      /* espaço entre linhas (1.6x o tamanho da fonte) */
+    margin-bottom: 10px;   /* espaço embaixo do parágrafo */
+}
+
+/* .preco: o preço em destaque verde */
+.preco {
+    font-weight: bold;         /* texto em negrito */
+    font-size: 18px;           /* tamanho maior */
+    color: #2e7d32;            /* cor verde */
+    background-color: #e8f5e9; /* fundo verde claro */
+    padding: 10px;             /* espaçamento interno */
+    border-radius: 5px;        /* cantos arredondados */
+    text-align: center;        /* texto centralizado */
+}
+
+/* --- FORMULÁRIO --- */
+
+form {
+    margin-top: 15px;      /* espaço em cima do formulário */
+}
+
+/* fieldset: a caixa que agrupa os campos */
+fieldset {
+    border: 2px solid #0066cc; /* borda azul de 2px */
+    border-radius: 8px;        /* cantos arredondados */
+    padding: 20px;             /* espaçamento interno */
+}
+
+/* legend: o título do fieldset ("Dados do Aluguel") */
+legend {
+    font-size: 18px;       /* tamanho da fonte */
+    font-weight: bold;     /* negrito */
+    color: #0066cc;        /* cor azul */
+    padding: 0 10px;       /* espaçamento dos lados */
+}
+
+/* .campo: cada grupo de label + input */
+.campo {
+    margin-bottom: 15px;   /* espaço entre os campos */
+}
+
+/* Label: o texto que fica em cima do input ("Nome:", "E-mail:", etc) */
+.campo label {
+    display: block;        /* faz o label ocupar a linha inteira (fica em cima do input) */
+    margin-bottom: 5px;    /* espaço entre o label e o input */
+    font-weight: bold;     /* negrito */
+}
+
+/* Todos os campos de entrada (input, select, textarea) */
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;           /* ocupam toda a largura */
+    padding: 8px;          /* espaçamento interno */
+    border: 1px solid #ccc; /* borda cinza clara */
+    border-radius: 5px;    /* cantos arredondados */
+    font-size: 16px;       /* tamanho da fonte */
+}
+
+/* :focus: quando você clica no campo (ele fica "ativo") */
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #0066cc; /* borda fica azul quando selecionado */
+    outline: none;         /* tira o contorno padrão do navegador */
+}
+
+/* --- BOTÕES --- */
+
+button {
+    padding: 10px 20px;     /* espaçamento interno (10px cima/baixo, 20px lados) */
+    border: none;           /* sem borda */
+    border-radius: 5px;     /* cantos arredondados */
+    font-size: 16px;        /* tamanho da fonte */
+    cursor: pointer;        /* cursor vira mãozinha ao passar por cima */
+    margin-right: 10px;     /* espaço entre os dois botões */
+}
+
+/* Botão de enviar (azul) */
+button[type="submit"] {
+    background-color: #0066cc; /* fundo azul */
+    color: white;              /* texto branco */
+}
+
+/* Botão de limpar (cinza) */
+button[type="reset"] {
+    background-color: #ccc;    /* fundo cinza */
+    color: #333;               /* texto escuro */
+}
+
+/* :hover: quando o mouse passa por cima do botão */
+button[type="submit"]:hover {
+    background-color: #0052a3; /* azul mais escuro */
+}
+
+button[type="reset"]:hover {
+    background-color: #bbb;    /* cinza mais escuro */
+}
+
+/* --- RODAPÉ (footer) --- */
+
+footer {
+    text-align: center;    /* texto centralizado */
+    padding: 20px;         /* espaçamento interno */
+    color: #666;           /* cor cinza */
+    font-size: 14px;       /* fonte menor */
+}
