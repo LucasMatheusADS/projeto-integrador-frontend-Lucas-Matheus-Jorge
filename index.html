@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel de Carros Esportivos</title>
+
+    <!-- Liga o HTML aos arquivos CSS externos -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER: cabeçalho da página -->
+    <header>
+        <h1>Aluguel de Carros Esportivos</h1>
+        <!-- Classe "banner" pra estilizar a imagem grande no CSS -->
+        <img class="banner" src="assets/images/carros-esportivos.webp" 
+             alt="Vários carros esportivos lado a lado">
+    </header>
+
+    <!-- MAIN: conteúdo principal da página (só pode ter UM na página inteira) -->
+    <main>
+
+        <!-- SECTION 1: catálogo dos carros -->
+        <section id="catalogo">
+            <h2>Catálogo de Carros</h2>
+
+            <!-- ARTICLE: cada carro é um conteúdo independente -->
+            <article class="carro">
+                <h3>Porsche 911</h3>
+                <img src="assets/images/porsche-911.webp" 
+                     alt="Porsche 911 prata estacionado">
+                <p>O Porsche 911 é um carro esportivo de alto desempenho, conhecido pelo design elegante, 
+                    motor potente e excelente dirigibilidade. É uma ótima opção para quem busca velocidade, 
+                    conforto e uma experiência exclusiva.</p>
+                <!-- Classe "preco" pra deixar o preço em destaque verde -->
+                <p class="preco">Aluguel do Carro por dia: R$ 3.500</p>
+            </article>
+
+            <article class="carro">
+                <h3>Audi R8</h3>
+                <img src="assets/images/audi-r8.webp" 
+                     alt="Audi R8 vermelho de frente">
+                <p>O Audi R8 é um superesportivo de alto desempenho,
+                    equipado com motor V10, visual moderno e excelente estabilidade.</p>
+                <p class="preco">Aluguel do Carro por dia: R$ 4.000</p>
+            </article>
+
+            <article class="carro">
+                <h3>Skyline R34</h3>
+                <img src="assets/images/skyline-r34.webp" 
+                     alt="Nissan Skyline R34 azul estacionado">
+                <p>O Nissan Skyline R34 é um esportivo japonês icônico,
+                    conhecido pelo motor potente, design agressivo e excelente desempenho.</p>
+                <p class="preco">Aluguel do Carro por dia: R$ 5.000</p>
+            </article>
+        </section>
+
+        <!-- SECTION 2: formulário de aluguel -->
+        <section id="aluguel">
+            <h2>Solicitar Aluguel</h2>
+
+            <!-- FORM: o formulário. method="post" envia os dados. action="#" é provisório -->
+            <form action="#" method="post">
+
+                <!-- FIELDSET: agrupa os campos do formulário numa caixa -->
+                <!-- LEGEND: título do fieldset (acessibilidade) -->
+                <fieldset>
+                    <legend>Dados do Aluguel</legend>
+
+                    <!-- Cada div "campo" agrupa um label + input juntos -->
+                    <div class="campo">
+                        <!-- for="nome" se liga ao id="nome" do input (acessibilidade) -->
+                        <label for="nome">Nome Completo:</label>
+                        <!-- required: não deixa enviar vazio -->
+                        <!-- pattern: só aceita letras e espaços, mínimo 3 caracteres -->
+                        <!-- title: mensagem que aparece se digitar errado -->
+                        <input type="text" id="nome" name="nome" required
+                               pattern="[A-Za-zÀ-ÿ\s]{3,80}" 
+                               title="Mínimo 3 letras. Apenas letras.">
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail:</label>
+                        <!-- type="email": valida formato de e-mail automaticamente -->
+                        <input type="email" id="email" name="email" required
+                               placeholder="exemplo@email.com">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone (com DDD):</label>
+                        <!-- type="tel": tipo semântico correto pra telefone -->
+                        <!-- pattern: força o formato (11) 91234-5678 -->
+                        <input type="tel" id="telefone" name="telefone" required
+                               pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
+                               title="Formato: (11) 91234-5678"
+                               placeholder="(11) 91234-5678">
+                    </div>
+
+                    <div class="campo">
+                        <label for="carro">Carro Desejado:</label>
+                        <!-- SELECT: lista de opções pré-definidas (melhor que digitar) -->
+                        <select id="carro" name="carro" required>
+                            <option value="">Selecione um carro</option>
+                            <option value="porsche-911">Porsche 911 — R$ 3.500/dia</option>
+                            <option value="audi-r8">Audi R8 — R$ 4.000/dia</option>
+                            <option value="skyline-r34">Skyline R34 — R$ 5.000/dia</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="dias">Quantidade de Dias:</label>
+                        <!-- type="number": só aceita números -->
+                        <!-- min/max: limita entre 1 e 30 dias -->
+                        <input type="number" id="dias" name="dias" 
+                               min="1" max="30" value="1"
+                               title="Entre 1 e 30 dias">
+                    </div>
+
+                    <div class="campo">
+                        <label for="data">Data de Retirada:</label>
+                        <!-- type="date": abre um calendário visual -->
+                        <input type="date" id="data" name="data" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="observacoes">Observações (opcional):</label>
+                        <!-- TEXTAREA: campo de texto de várias linhas -->
+                        <textarea id="observacoes" name="observacoes" 
+                                  rows="3" cols="40"></textarea>
+                    </div>
+
+                    <!-- BUTTON: type="submit" envia o formulário -->
+                    <!-- BUTTON: type="reset" limpa todos os campos -->
+                    <!-- NUNCA usar div ou span no lugar de button (acessibilidade) -->
+                    <button type="submit">Confirmar Aluguel</button>
+                    <button type="reset">Limpar Formulário</button>
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER: rodapé da página -->
+    <footer>
+        <p>&copy; 2026 Aluguel de Carros Esportivos. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
