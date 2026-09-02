@@ -37,6 +37,14 @@
     <!-- MAIN: conteúdo principal da página (só pode ter UM na página inteira) -->
     <main>
 
+        <!-- Player de música de fundo -->
+        <!-- preload="none": não carrega até o usuário clicar play -->
+        <audio controls preload="none">
+            <source src="audios/trilha-carros.mp3" type="audio/mpeg">
+            <source src="audios/trilha-carros.ogg" type="audio/ogg">
+            Seu navegador não suporta áudio.
+        </audio>
+
         <!-- SECTION 1: catálogo dos carros -->
         <section id="catalogo">
             <h2>Catálogo de Carros</h2>

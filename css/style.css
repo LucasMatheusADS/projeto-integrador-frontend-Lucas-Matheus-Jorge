@@ -3,7 +3,6 @@
    Estilos visuais da página.
 */
 
-
 /* body: o corpo inteiro da página */
 body {
     font-family: Arial, sans-serif;   /* fonte do texto */
@@ -25,12 +24,13 @@ h1 {
     margin-bottom: 20px;   /* espaço embaixo do título */
 }
 
-/* .banner: a imagem grande no topo da página */
-/* o ponto (.) significa que é uma classe */
+/* .banner: o vídeo grande no topo da página */
 .banner {
-    width: 100%;           /* imagem ocupa toda a largura disponível */
-    max-width: 800px;      /* mas no máximo 800px (não fica gigante) */
-    border-radius: 8px;    /* cantos arredondados */
+    display: block;          /* vira bloco (permite centralizar com margin auto) */
+    width: 100%;             /* ocupa toda a largura disponível */
+    max-width: 800px;        /* mas no máximo 800px */
+    margin: 0 auto 20px;     /* centraliza + 20px embaixo */
+    border-radius: 8px;      /* cantos arredondados */
 }
 
 /* --- CONTEÚDO PRINCIPAL (main) --- */
@@ -38,6 +38,14 @@ h1 {
 main {
     max-width: 800px;      /* conteúdo no máximo 800px de largura */
     margin: 0 auto;        /* "0 auto" centraliza na página */
+}
+
+/* Player de áudio: centralizado e com largura máxima */
+audio {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 30px;    /* centraliza + 30px embaixo */
 }
 
 /* --- SEÇÕES (section) --- */
