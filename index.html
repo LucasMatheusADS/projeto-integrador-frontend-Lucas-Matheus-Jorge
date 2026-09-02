@@ -14,9 +14,24 @@
     <!-- HEADER: cabeçalho da página -->
     <header>
         <h1>Aluguel de Carros Esportivos</h1>
-        <!-- Classe "banner" pra estilizar a imagem grande no CSS -->
-        <img class="banner" src="imagem/carros-esportivos.webp" 
-             alt="Vários carros esportivos lado a lado">
+
+        <!-- 
+            preload="none": o vídeo não carrega dados até o usuário clicar play.
+            Justificativa: o vídeo está no topo da página (acima da dobra), mas como 
+            é um banner decorativo e o usuário pode não querer assisti-lo, usar 
+            preload="none" economiza banda. O poster mostra uma imagem estática 
+            enquanto o vídeo não é carregado.
+        -->
+        <video class="banner" controls preload="none"
+               poster="imagem/carros-esportivos.webp">
+
+            <!-- Source em ordem de preferência: WebM primeiro (menor, mais eficiente) -->
+            <source src="videos/carros-esportivos.webm" type="video/webm">
+            <!-- Fallback: MP4 (compatibilidade máxima) -->
+            <source src="videos/carros-esportivos.mp4" type="video/mp4">
+
+            Seu navegador não suporta vídeos.
+        </video>
     </header>
 
     <!-- MAIN: conteúdo principal da página (só pode ter UM na página inteira) -->
@@ -29,10 +44,10 @@
             <!-- ARTICLE: cada carro é um conteúdo independente -->
             <article class="carro">
                 <h3>Porsche 911</h3>
-                <img src="imagem/porsche-911.webp" 
+                <img src="imagem/porsche-911.webp"
                      alt="Porsche 911 prata estacionado">
-                <p>O Porsche 911 é um carro esportivo de alto desempenho, conhecido pelo design elegante, 
-                    motor potente e excelente dirigibilidade. É uma ótima opção para quem busca velocidade, 
+                <p>O Porsche 911 é um carro esportivo de alto desempenho, conhecido pelo design elegante,
+                    motor potente e excelente dirigibilidade. É uma ótima opção para quem busca velocidade,
                     conforto e uma experiência exclusiva.</p>
                 <!-- Classe "preco" pra deixar o preço em destaque verde -->
                 <p class="preco">Aluguel do Carro por dia: R$ 3.500</p>
@@ -40,7 +55,7 @@
 
             <article class="carro">
                 <h3>Audi R8</h3>
-                <img src="imagem/audi-r8.webp" 
+                <img src="imagem/audi-r8.webp"
                      alt="Audi R8 vermelho de frente">
                 <p>O Audi R8 é um superesportivo de alto desempenho,
                     equipado com motor V10, visual moderno e excelente estabilidade.</p>
@@ -49,7 +64,7 @@
 
             <article class="carro">
                 <h3>Skyline R34</h3>
-                <img src="imagem/skyline-r34.webp" 
+                <img src="imagem/skyline-r34.webp"
                      alt="Nissan Skyline R34 azul estacionado">
                 <p>O Nissan Skyline R34 é um esportivo japonês icônico,
                     conhecido pelo motor potente, design agressivo e excelente desempenho.</p>
@@ -77,7 +92,7 @@
                         <!-- pattern: só aceita letras e espaços, mínimo 3 caracteres -->
                         <!-- title: mensagem que aparece se digitar errado -->
                         <input type="text" id="nome" name="nome" required
-                               pattern="[A-Za-zÀ-ÿ\s]{3,80}" 
+                               pattern="[A-Za-zÀ-ÿ\s]{3,80}"
                                title="Mínimo 3 letras. Apenas letras.">
                     </div>
 
@@ -113,7 +128,7 @@
                         <label for="dias">Quantidade de Dias:</label>
                         <!-- type="number": só aceita números -->
                         <!-- min/max: limita entre 1 e 30 dias -->
-                        <input type="number" id="dias" name="dias" 
+                        <input type="number" id="dias" name="dias"
                                min="1" max="30" value="1"
                                title="Entre 1 e 30 dias">
                     </div>
@@ -127,7 +142,7 @@
                     <div class="campo">
                         <label for="observacoes">Observações (opcional):</label>
                         <!-- TEXTAREA: campo de texto de várias linhas -->
-                        <textarea id="observacoes" name="observacoes" 
+                        <textarea id="observacoes" name="observacoes"
                                   rows="3" cols="40"></textarea>
                     </div>
 
