@@ -29,40 +29,8 @@ O site permite que o usuário visualize um catálogo de carros esportivos dispon
 - **CSS3** — reset.css + style.css para estilização
 - **Multimídia HTML5** — tag `<video>` com múltiplos formatos (WebM + MP4)
 
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+--
+
 ## Avaliação
 
 DATA - 02/09/2026
@@ -94,7 +62,7 @@ Avaliação em pares
 | Definir ordem dos formatos                  |     ✅    | O WebM está primeiro e possui tamanho menor que o MP4, priorizando eficiência.                                                     |
 | Justificar o uso de `preload`               |     ✅    | Foi utilizado `preload="none"` e a escolha está explicada em comentário no código.                                                 |
 | Utilizar `poster` no vídeo                  |     ✅    | O vídeo possui uma imagem representativa como `poster`.                                                                            |
-| Utilizar legendas com `track` e `.vtt`      |     ✅    | Não se aplica neste caso, pois o vídeo não possui fala ou narração.                                                                |
+| Utilizar legendas com `track` e `.vtt`      |     ➖    | Não se aplica neste caso, pois o vídeo não possui fala ou narração.                                                                |
 | Testar compatibilidade com `canPlayType()`  |    ⚠️    | O teste foi realizado, porém WebM e MP4 retornaram `maybe`, enquanto a atividade pede pelo menos um formato retornando `probably`. |
 | Utilizar áudio em dois formatos             |    ⚠️    | O código possui MP3 e OGG, porém os dois arquivos apresentaram erro `404 (Not Found)` durante o teste local.                       |
 | Realizar commit relacionado à atividade     |     ✅    | Existem commits relacionados à implementação do vídeo e do áudio.                                                                  |
