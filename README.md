@@ -28,7 +28,7 @@ O site permite que o usuário visualize um catálogo de carros esportivos dispon
 - **HTML5** — estrutura semântica (header, main, section, article, footer)
 - **CSS3** — reset.css + style.css para estilização
 - **Multimídia HTML5** — tag `<video>` com múltiplos formatos (WebM + MP4)
--
+
 -
 -
 -
